@@ -58,9 +58,9 @@ date_df = date_df.apply(lambda x: insert_days_per_month(x), axis = 1)
 date_df
 ```
 
-## EXTRA EXTRA READ ALL ABOUT IT HOT OFF THE PRESSES
+## Interactive Widgets
 
-Quarto has support for interactive documents. Support formats include:
+Quarto has support for interactive documents. Supported formats include:
 
 -   JavaScript: Observable JS
 
@@ -73,10 +73,15 @@ Quarto has support for interactive documents. Support formats include:
 ```{python}
 from ipyleaflet import Map, Marker
 
-csg_loc = (33.772819, -117.9694484)
+good_eats = {
+  "Cham Soot Gol": (33.772819, -117.9694484),
+  "The Boiling Crab": (33.6996179, -117.8905689),
+  "Tan Hoang Huong": (33.7446965, -117.9629173)
+}
 
-cham_soot_gol = Map(center=csg_loc, scroll_wheel_zoom=True)
-cham_soot_gol.add_layer(Marker(location=csg_loc, title="Cham Soot Gol"))
+cham_soot_gol = Map(center=good_eats["Cham Soot Gol"], scroll_wheel_zoom=True)
+for place in good_eats:
+  cham_soot_gol.add_layer(Marker(location=good_eats[place], title=place))
 cham_soot_gol
 ```
 
