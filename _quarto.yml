@@ -32,6 +32,7 @@ book:
         - first.qmd
         - second.qmd
         - third.ipynb
+        - four.qmd
 
 
 bibliography: references.bib
@@ -40,7 +41,7 @@ format:
   html:
     theme:
       - cosmo
-      - styles.scss
+      - styles/styles.scss
     code-background: true
     number-sections: false
   pdf:

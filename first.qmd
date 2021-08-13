@@ -45,7 +45,7 @@ Quarto is based on **R**Markdown, so you can do all the R stuff you're used to a
 
 library(tidyverse)
 
-standard_curves <- readxl::read_xlsx('std_curve.xlsx', sheet = "everything") %>% 
+standard_curves <- readxl::read_xlsx('data/std_curve.xlsx', sheet = "everything") %>% 
   janitor::clean_names() %>% 
   filter(amoa < 40)
 
